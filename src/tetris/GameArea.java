@@ -157,8 +157,9 @@ public class GameArea extends JPanel {
         return true;
     }
 
-    public void clearLines() {
+    public int clearLines() {
         boolean lineFilled;
+        int linesCleared = 0;
         for (int r = gridRows - 1; r >= 0; r--) {
             lineFilled = true;
             for (int c = 0; c < gridColums; c++) {
@@ -168,6 +169,7 @@ public class GameArea extends JPanel {
                 }
             }
             if (lineFilled) {
+                linesCleared++;
                 clearLine(r);
                 shiftDown(r);
                 clearLine(0);
@@ -176,6 +178,8 @@ public class GameArea extends JPanel {
                 repaint();
             }
         }
+        
+        return linesCleared;
     }
 
     private void clearLine(int r) {
