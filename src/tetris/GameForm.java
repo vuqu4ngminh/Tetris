@@ -75,6 +75,7 @@ public class GameForm extends javax.swing.JFrame {
 
         gameAreaPlaceholder.setBackground(new java.awt.Color(255, 255, 255));
         gameAreaPlaceholder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gameAreaPlaceholder.setPreferredSize(new java.awt.Dimension(200, 300));
 
         javax.swing.GroupLayout gameAreaPlaceholderLayout = new javax.swing.GroupLayout(gameAreaPlaceholder);
         gameAreaPlaceholder.setLayout(gameAreaPlaceholderLayout);
@@ -114,7 +115,7 @@ public class GameForm extends javax.swing.JFrame {
                 .addComponent(scoreDisplay)
                 .addGap(65, 65, 65)
                 .addComponent(levelDisplay)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
