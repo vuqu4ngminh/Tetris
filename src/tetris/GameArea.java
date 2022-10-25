@@ -3,6 +3,8 @@ package tetris;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.util.Random;
+import tetrisblocks.*;
 
 public class GameArea extends JPanel {
 
@@ -12,9 +14,9 @@ public class GameArea extends JPanel {
     private Color[][] background;
 
     private TetrisBlock block;
+    private TetrisBlock[] blocks;
 
     public GameArea(JPanel placeholder, int colums) {
-        placeholder.setVisible(false);
         this.setBounds(placeholder.getBounds());
         this.setBackground(placeholder.getBackground());
         this.setBorder(placeholder.getBorder());
@@ -24,10 +26,12 @@ public class GameArea extends JPanel {
         gridRows = this.getBounds().height / gridCellSize;
 
         background = new Color[gridRows][gridColums];
+        blocks = new TetrisBlock[] {new IShape(),new JShape(),new LShape(),new OShape(),new SShape(),new TShape(),new ZShape()};
     }
 
     public void spawnBlock() {
-        block = new TetrisBlock(new int[][]{{1, 0}, {1, 0}, {1, 1}}, Color.blue);
+        Random r = new Random();
+        block = blocks[r.nextInt(blocks.length)];
         block.spawn(gridColums);
     }
     
@@ -77,7 +81,12 @@ public class GameArea extends JPanel {
 
     public void rotateBlock() {
         if(block == null) return;
-        block.rotateBlock();
+        block.rotate();
+        
+        if(block.getLeftEdge() < 0) block.setX(0);
+        if(block.getRightEdge() >= gridColums) block.setX(gridColums - block.getWidth());
+        if(block.getBottomEdge() >= gridRows) block.setY(gridRows - block.getHeight());
+        
         repaint();
     }
 
