@@ -72,17 +72,18 @@ public class GameForm extends javax.swing.JFrame {
         btnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1200, 1000));
         setResizable(false);
 
         gameAreaPlaceholder.setBackground(new java.awt.Color(255, 255, 255));
         gameAreaPlaceholder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        gameAreaPlaceholder.setPreferredSize(new java.awt.Dimension(200, 300));
+        gameAreaPlaceholder.setPreferredSize(new java.awt.Dimension(800, 1200));
 
         javax.swing.GroupLayout gameAreaPlaceholderLayout = new javax.swing.GroupLayout(gameAreaPlaceholder);
         gameAreaPlaceholder.setLayout(gameAreaPlaceholderLayout);
         gameAreaPlaceholderLayout.setHorizontalGroup(
             gameAreaPlaceholderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 198, Short.MAX_VALUE)
+            .addGap(0, 798, Short.MAX_VALUE)
         );
         gameAreaPlaceholderLayout.setVerticalGroup(
             gameAreaPlaceholderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +114,7 @@ public class GameForm extends javax.swing.JFrame {
                         .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
                 .addComponent(gameAreaPlaceholder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +126,7 @@ public class GameForm extends javax.swing.JFrame {
                 .addComponent(levelDisplay)
                 .addGap(45, 45, 45)
                 .addComponent(btnMenu)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(987, Short.MAX_VALUE))
         );
 
         pack();
