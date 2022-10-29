@@ -14,7 +14,7 @@ public class GameForm extends javax.swing.JFrame {
         this.add(ga);
         
         initControls();
-        startGame();
+        
     }
     
     public void initControls(){

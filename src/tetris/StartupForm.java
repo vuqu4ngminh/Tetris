@@ -91,7 +91,8 @@ public class StartupForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        
+        this.setVisible(false);
+        Tetris.start();
     }//GEN-LAST:event_btnStartActionPerformed
 
     /**

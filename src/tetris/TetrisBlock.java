@@ -8,7 +8,7 @@ public class TetrisBlock {
     private int x,y;
     private int[][][] shapes;
     private int currentRotation;
-    private Color[] availableColors = {Color.red,Color.green,Color.yellow,Color.pink,Color.blue};
+    private Color[] availableColors = {Color.red,Color.green,Color.yellow,Color.gray,Color.blue};
     
     public TetrisBlock(int[][] shape){
         this.shape = shape;
