@@ -8,6 +8,7 @@ import javax.swing.KeyStroke;
 
 public class GameForm extends javax.swing.JFrame {
     private GameArea ga;
+    private GameThread gt;
     public GameForm() {
         initComponents();
         ga = new GameArea(gameAreaPlaceholder,10);
@@ -52,7 +53,9 @@ public class GameForm extends javax.swing.JFrame {
         });
     }
     public void startGame(){
-        new GameThread(ga,this).start();
+        ga.initBackgroundArray();
+        gt = new GameThread(ga,this);
+        gt.start();
     }
     
     public void updateScore(int score){
@@ -97,6 +100,12 @@ public class GameForm extends javax.swing.JFrame {
         levelDisplay.setText("Level: 1");
 
         btnMenu.setText("Menu");
+        btnMenu.setFocusable(false);
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,6 +141,12 @@ public class GameForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        gt.interrupt();
+        this.setVisible(false);
+        Tetris.showStartup();
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

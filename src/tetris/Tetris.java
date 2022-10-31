@@ -1,5 +1,7 @@
 package tetris;
 
+import javax.swing.JOptionPane;
+
 public class Tetris {
 
     private static GameForm gf;
@@ -9,6 +11,17 @@ public class Tetris {
     public static void start() {
         gf.setVisible(true);
         gf.startGame();
+    }
+    public static void showLeaderboard(){
+        lf.setVisible(true);
+    }
+    public static void showStartup(){
+        sf.setVisible(true);
+    }
+    public static void gameOver(int score){
+        String name = JOptionPane.showInputDialog("Game Over\nHãy nhập tên:");
+        gf.setVisible(true);
+        lf.addPlayer(name,score);
     }
 
     public static void main(String[] agrs) {
