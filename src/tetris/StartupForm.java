@@ -1,20 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package tetris;
 
-/**
- *
- * @author enter
- */
-public class StartupForm extends javax.swing.JFrame {
+import javax.swing.ImageIcon;
 
-    /**
-     * Creates new form StartupForm
-     */
+public class StartupForm extends javax.swing.JFrame {
     public StartupForm() {
         initComponents();
+        ImageIcon img = new ImageIcon("block.png","Icon");
+        this.setTitle("Xếp Hình");
+        this.setIconImage(img.getImage());
     }
 
     @SuppressWarnings("unchecked")
@@ -96,9 +89,6 @@ public class StartupForm extends javax.swing.JFrame {
         Tetris.start();
     }//GEN-LAST:event_btnStartActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new StartupForm().setVisible(true);

@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.ImageIcon;
 import javax.swing.RowSorter.SortKey;
 import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +24,9 @@ public class LeaderboardForm extends javax.swing.JFrame {
         initComponents();
         initTableData();
         initTableSorter();
+        ImageIcon img = new ImageIcon("block.png","Icon");
+        this.setTitle("Xếp Hình");
+        this.setIconImage(img.getImage());
     }
 
     public void addPlayer(String name, int score) {

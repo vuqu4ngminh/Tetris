@@ -3,6 +3,7 @@ package tetris;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.KeyStroke;
 
@@ -13,7 +14,9 @@ public class GameForm extends javax.swing.JFrame {
         initComponents();
         ga = new GameArea(gameAreaPlaceholder,10);
         this.add(ga);
-        
+        ImageIcon img = new ImageIcon("block.png","Icon");
+        this.setTitle("Xếp Hình");
+        this.setIconImage(img.getImage());
         initControls();
         
     }
